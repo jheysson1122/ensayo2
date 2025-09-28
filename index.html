@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deleite - Quesería Artesanal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1><i class="fas fa-cheese"></i> Deleite</h1>
+                    <span>Quesería Artesanal</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="login-btn" id="loginBtn">
+                        <i class="fas fa-user"></i> Iniciar Sesión
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Sabores que Deleitan</h2>
+            <p>Descubre nuestra selección de quesos artesanales, elaborados con pasión y tradición familiar</p>
+            <button class="cta-btn" onclick="scrollToSection('productos')">Ver Productos</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Quesos artesanales">
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section id="productos" class="products">
+        <div class="container">
+            <h2>Nuestros Quesos</h2>
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="blando">Blandos</button>
+                <button class="filter-btn" data-filter="semi">Semi-duros</button>
+                <button class="filter-btn" data-filter="duro">Duros</button>
+                <button class="filter-btn" data-filter="azul">Azules</button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Nuestra Historia</h2>
+                    <p>Desde 1985, Deleite ha sido sinónimo de calidad y tradición en la elaboración de quesos artesanales. Nuestra quesería familiar combina técnicas ancestrales con ingredientes de la más alta calidad.</p>
+                    <p>Cada queso es elaborado con leche fresca de vacas alimentadas con pastos naturales, siguiendo recetas que han pasado de generación en generación.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <h3>100% Natural</h3>
+                            <p>Sin conservantes ni aditivos artificiales</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <h3>Hecho con Amor</h3>
+                            <p>Elaborado con pasión y dedicación familiar</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <h3>Calidad Premium</h3>
+                            <p>Ingredientes seleccionados cuidadosamente</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Quesería familiar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>Av. Principal 123<br>Ciudad, Provincia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+54 11 1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@deleitequesos.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horarios</h3>
+                            <p>Lun - Vie: 9:00 - 18:00<br>Sáb: 9:00 - 14:00</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <h3>Envíanos un mensaje</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Iniciar Sesión</h3>
+                <button class="close-modal" id="closeLoginModal">&times;</button>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Tu contraseña" required>
+                </div>
+                <button type="submit" class="submit-btn">Iniciar Sesión</button>
+                <p class="form-footer">
+                    ¿No tienes cuenta? <a href="#" id="showRegister">Regístrate aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Crear Cuenta</h3>
+                <button class="close-modal" id="closeRegisterModal">&times;</button>
+            </div>
+            <form class="register-form" id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Nombre Completo</label>
+                    <input type="text" id="registerName" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Contraseña</label>
+                    <input type="password" id="registerPassword" placeholder="Mínimo 6 caracteres" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirmar Contraseña</label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Repite tu contraseña" required>
+                </div>
+                <button type="submit" class="submit-btn">Crear Cuenta</button>
+                <p class="form-footer">
+                    ¿Ya tienes cuenta? <a href="#" id="showLogin">Inicia sesión aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Carrito Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tu Carrito</h3>
+                <button class="close-modal" id="closeCartModal">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Los items del carrito se cargarán aquí -->
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cartTotal">0</span></strong>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-cheese"></i> Deleite</h3>
+                    <p>Quesería artesanal con más de 35 años de tradición familiar.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#" data-filter="blando">Quesos Blandos</a></li>
+                        <li><a href="#" data-filter="semi">Quesos Semi-duros</a></li>
+                        <li><a href="#" data-filter="duro">Quesos Duros</a></li>
+                        <li><a href="#" data-filter="azul">Quesos Azules</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad</p>
+                    <p><i class="fas fa-phone"></i> +54 11 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> info@deleitequesos.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Deleite Quesería. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
